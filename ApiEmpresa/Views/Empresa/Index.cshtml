@@ -1,0 +1,98 @@
+﻿@model IEnumerable<EmpresaViewsModels>
+<link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.css" />
+<div class="card text-primary">
+    <div class="card-header text-center">
+        <h5>Lista de Empresas</h5>        
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a asp-action="Create" class="btn btn-outline-primary btn-sm">Crear Nuevo</a>
+                        <hr />
+                        <h5 class="panel-title">Empresas</h5>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-responsive table-striped" id="miTabla">
+                            <thead>
+                                <tr>            
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Id_Empresa)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.EMPRESAS)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DESCRIPCION)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DIRECCION)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.RUC)
+                                    </th>
+                                    <th>
+                                       @Html.DisplayNameFor(model => model.FUENTE)
+                                    </th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                             @Html.DisplayFor(modelItem => item.Id_Empresa)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EMPRESAS)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DESCRIPCION)
+                                        </td>
+                                        <td>
+                                            <textarea readonly="readonly">@Html.DisplayFor(modelItem => item.DIRECCION)</textarea>
+                                        </td>
+                                         <td>
+                                            @Html.DisplayFor(modelItem => item.RUC)
+                                        </td>
+                                        <td>
+                                            <textarea readonly ="readonly">@Html.DisplayFor(modelItem => item.FUENTE)</textarea>
+                                        </td>
+
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.Id_Empresa" class="btn btn-outline-warning btn-sm">Editar</a>
+                                            <a asp-action="Delete" asp-route-id="@item.Id_Empresa" class="btn btn-outline-danger btn-sm">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted text-center">
+        Crud Empresa
+    </div>
+   
+    @section scripts{
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.datatables.net/2.1.5/js/dataTables.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#miTabla').DataTable({
+                    "paging": true,
+                    "searching": true,
+                    "ordering": true,
+                    "info": true,
+                    "lengthMenu": [5, 10, 25, 50],
+                                        
+                });
+            });
+        </script>
+    }
+
+</div>

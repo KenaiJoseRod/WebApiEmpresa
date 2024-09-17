@@ -1,0 +1,48 @@
+﻿@model ApiEmpresa.Models.EmpresaViewsModels
+<div class=" card text-primary">
+    <div class="card-header text-center">
+        <h5>Editar Empresa</h5>
+    </div>
+    <div class=" card-body text-primary">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id_Empresa" />
+                    <div class="form-group">
+                        <label asp-for="EMPRESAS" class="control-label"></label>
+                        <input asp-for="EMPRESAS" class="form-control" />
+                        <span asp-validation-for="EMPRESAS" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DESCRIPCION" class="control-label"></label>
+                        <textarea asp-for="DESCRIPCION" class="form-control"></textarea>
+                        <span asp-validation-for="DESCRIPCION" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DIRECCION" class="control-label"></label>
+                        <textarea asp-for="DIRECCION" class="form-control"></textarea>
+                        <span asp-validation-for="DIRECCION" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="RUC" class="control-label"></label>
+                        <input asp-for="RUC" class="form-control" />
+                        <span asp-validation-for="RUC" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FUENTE" class="control-label"></label>
+                        <input asp-for="FUENTE" class="form-control" />
+                        <span asp-validation-for="FUENTE" class="text-danger"></span>
+                    </div>
+                    <div class=" card-footer text-center">
+                        <div class="form-group">
+                            <input type="submit" value="Guardar" class="btn btn-outline-primary btn-sm" />
+                            <a asp-action="Index" class="btn btn-outline-success btn-sm">Volver a la lista</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

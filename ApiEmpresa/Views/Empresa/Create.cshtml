@@ -1,0 +1,47 @@
+﻿@model ApiEmpresa.Models.EmpresaViewsModels
+
+<div class=" card text-primary">
+    <div class="card-header text-center">
+        <h5>Crear Producto</h5>
+    </div>
+    <div class=" card-body text-center">
+        <div class=" col-md-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label></label>
+                    <input asp-for="EMPRESAS" class="form-control" placeholder="ENPRESA">
+                    <span asp-validation-for="EMPRESAS" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label></label>
+                    <input asp-for="DESCRIPCION" class="form-control" placeholder="Descripcion">
+                    <span asp-validation-for="DESCRIPCION" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label></label>
+                    <input asp-for="DIRECCION" class="form-control" placeholder="Direccion">
+                    <span asp-validation-for="DIRECCION" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label></label>
+                    <input asp-for="RUC" class="form-control" placeholder="Ruc">
+                    <span asp-validation-for="RUC" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label></label>
+                    <input asp-for="FUENTE" class="form-control" placeholder="Fuente">
+                    <span asp-validation-for="FUENTE" class="text-danger"></span>
+                </div>
+                <div class=" card-footer text-center">
+                    <div class="form-group">
+                        <input type="submit" value="Guardar" class="btn btn-outline-primary btn-sm" />
+                        <a asp-action="Index" class="btn btn-outline-success btn-sm">Volver a la Lista</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
